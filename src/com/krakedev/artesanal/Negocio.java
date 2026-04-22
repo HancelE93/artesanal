@@ -34,7 +34,7 @@ public class Negocio {
 	}
 	
 	public void cargarMaquina () {
-		maquinaA.llenarMaquina();
+		maquinaA.llenarMaquina();	
 		
 	}
 	
@@ -42,7 +42,6 @@ public class Negocio {
 		double valor = maquinaA.servirCerveza(ml);
 		cliente.setTotalConsumido(cliente.getTotalConsumido() + valor);
 	}
-	
 	
 
 }
