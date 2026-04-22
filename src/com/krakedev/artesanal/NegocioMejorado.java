@@ -10,7 +10,9 @@ public class NegocioMejorado {
 	    maquinas = new ArrayList<>();
 	}
 	
-
+	public ArrayList<Maquina> getMaquinas() {
+		return maquinas;
+	}
 
 	public void setMaquinas(ArrayList<Maquina> maquinas) {
 		this.maquinas = maquinas;
