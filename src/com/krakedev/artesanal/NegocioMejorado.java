@@ -5,9 +5,14 @@ import java.util.ArrayList;
 public class NegocioMejorado {
 
 	ArrayList<Maquina> maquinas;
+	ArrayList<Cliente> clientes;
 
+	private int ultimoCodigo = 1000;
+	
+	
 	public NegocioMejorado() {
 		maquinas = new ArrayList<>();
+		clientes = new ArrayList<>();
 	}
 
 	public ArrayList<Maquina> getMaquinas() {
@@ -69,4 +74,25 @@ public class NegocioMejorado {
 		return null; // si no encuentra ninguna, retorna null
 	}
 
+	public Cliente  registrarCLientes(String nombre, String cedula) {
+		
+		 // 1. Generar código con ultimoCodigo
+	    
+		String codigo = "A-" + ultimoCodigo;
+
+	    // 2. Incrementar para el siguiente cliente
+	    ultimoCodigo++;
+
+	    // 3. Crear el cliente
+	    Cliente cliente = new Cliente();
+	    cliente.setNombre(nombre);
+	    cliente.setCedula(cedula);
+	    // (si tu clase Cliente tiene atributo codigo, también lo asignas aquí)
+
+	    // 4. Guardarlo en la lista
+	    clientes.add(cliente);
+
+	    // 5. Retornar el cliente creado (opcional pero recomendado)
+	    return cliente;
+	}
 }
