@@ -33,14 +33,17 @@ public class NegocioMejorado {
 		// devuelve el resultado final
 	}
 
-	public void agregarMaquina(String nombreCerveza, String descripcion, double precioPorMl) {
+	public boolean agregarMaquina(String nombreCerveza, String descripcion, double precioPorMl) {
 		String codigo = generarCodigo(); // llamamos el metodo generar codigo y le guardamos en una variable
 
+		if ( recuperarMaquina(codigo)!=null) {
+			return false;
+		}
 		Maquina maquina = new Maquina(nombreCerveza, descripcion, precioPorMl, codigo);
 		// se crea el objeto maquina y con los valores que recibe
-
 		maquinas.add(maquina); // agregamps el objeto
 
+		return true;
 	}
 
 	public void cargarMaquinas() {
