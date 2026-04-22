@@ -3,13 +3,13 @@ package com.krakedev.artesanal;
 import java.util.ArrayList;
 
 public class NegocioMejorado {
-	
-	ArrayList<Maquina>maquinas;
+
+	ArrayList<Maquina> maquinas;
 
 	public NegocioMejorado() {
-	    maquinas = new ArrayList<>();
+		maquinas = new ArrayList<>();
 	}
-	
+
 	public ArrayList<Maquina> getMaquinas() {
 		return maquinas;
 	}
@@ -17,6 +17,11 @@ public class NegocioMejorado {
 	public void setMaquinas(ArrayList<Maquina> maquinas) {
 		this.maquinas = maquinas;
 	}
-	
-	
+
+	public String generarCodigo() {
+		int numero = (int) (Math.random() * 100) + 1;
+		String codigo = "M-" + numero;
+		return codigo;
+	}
+
 }
