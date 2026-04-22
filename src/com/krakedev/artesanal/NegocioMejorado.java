@@ -41,6 +41,14 @@ public class NegocioMejorado {
 		
 		maquinas.add(maquina); //agregamps el objeto
 		
-		
 	}
-}
+	
+	public void cargarMaquinas () {
+		 for (int i = 0; i < maquinas.size(); i++) { 
+		        // recorre la lista desde la posición 0 hasta la última
+
+		        maquinas.get(i).llenarMaquina(); 
+		        // toma cada máquina y ejecuta llenarMaquina()
+		    }
+	}
+	}
