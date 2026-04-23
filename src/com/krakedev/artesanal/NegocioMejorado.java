@@ -8,11 +8,10 @@ public class NegocioMejorado {
 	private ArrayList<Cliente> clientes = new ArrayList<>();
 
 	private int ultimoCodigo = 1000;
-	
-	
+
 	public NegocioMejorado() {
 		maquinas = new ArrayList<>();
-		//clientes = new ArrayList<>();
+		// clientes = new ArrayList<>();
 	}
 
 	public ArrayList<Maquina> getMaquinas() {
@@ -41,7 +40,7 @@ public class NegocioMejorado {
 	public boolean agregarMaquina(String nombreCerveza, String descripcion, double precioPorMl) {
 		String codigo = generarCodigo(); // llamamos el metodo generar codigo y le guardamos en una variable
 
-		if ( recuperarMaquina(codigo)!=null) {
+		if (recuperarMaquina(codigo) != null) {
 			return false;
 		}
 		Maquina maquina = new Maquina(nombreCerveza, descripcion, precioPorMl, codigo);
@@ -74,25 +73,38 @@ public class NegocioMejorado {
 		return null; // si no encuentra ninguna, retorna null
 	}
 
-	public Cliente  registrarCLientes(String nombre, String cedula) {
-		
-		 // 1. Generar código con ultimoCodigo
-	    
+	public Cliente registrarCLientes(String nombre, String cedula) {
+
+		// 1. Generar código con ultimoCodigo
+
 		String codigo = "A-" + ultimoCodigo;
 
-	    // 2. Incrementar para el siguiente cliente
-	    ultimoCodigo++;
+		// 2. Incrementar para el siguiente cliente
+		ultimoCodigo++;
 
-	    // 3. Crear el cliente
-	    Cliente cliente = new Cliente();
-	    cliente.setNombre(nombre);
-	    cliente.setCedula(cedula);
-	    // (si tu clase Cliente tiene atributo codigo, también lo asignas aquí)
+		// 3. Crear el cliente
+		Cliente cliente = new Cliente();
+		cliente.setNombre(nombre);
+		cliente.setCedula(cedula);
+		// (si tu clase Cliente tiene atributo codigo, también lo asignas aquí)
 
-	    // 4. Guardarlo en la lista
-	    clientes.add(cliente);
+		// 4. Guardarlo en la lista
+		clientes.add(cliente);
 
-	    // 5. Retornar el cliente creado (opcional pero recomendado)
-	    return cliente;
+		// 5. Retornar el cliente creado (opcional pero recomendado)
+		return cliente;
+	}
+
+	private Cliente buscarClientePorCedula(String cedula) {
+
+		for (int i = 0; i < clientes.size(); i++) {
+			Cliente cliente = clientes.get(i);
+
+			if (cliente.getCedula().equals(cedula)) {
+				return cliente;
+			}
+		}
+		return null;
+
 	}
 }
