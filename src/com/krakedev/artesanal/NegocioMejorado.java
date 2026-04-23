@@ -122,4 +122,19 @@ public class NegocioMejorado {
 
 	}
 	
+	private void consumirCerveza (int codigoCliente, String codigoMaquina, double cantidad) {
+		
+
+		// 🔹 Recibe: código cliente, código máquina, cantidad
+
+	    Maquina maquina = recuperarMaquina(codigoMaquina);
+	    // 🔹 Buscar máquina invocando a recuperarMaquina
+
+	    Cliente cliente = buscarClientePorCodigo(codigoCliente);
+	    // 🔹 Buscar cliente invocando a buscarClientePorCodigo
+
+	    double valor = maquina.servirCerveza(cantidad);
+	    // 🔹 Invocar a servirCerveza de la máquina recuperada
+	    // 🔹 Guardar el retorno en una variable (valor)
+	}
 }
