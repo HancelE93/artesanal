@@ -137,4 +137,16 @@ public class NegocioMejorado {
 	    // 🔹 Invocar a servirCerveza de la máquina recuperada
 	    // 🔹 Guardar el retorno en una variable (valor)
 	}
+	
+	public void registrarConsumo (int codigoCliente, double valor) {
+
+		// 🔹 Buscar cliente (implícito para poder trabajar con él)
+	    Cliente cliente = buscarClientePorCodigo(codigoCliente);
+
+	    // 🔹 Sumar valor consumido al cliente a su variable totalConsumido
+	    double totalActual = cliente.getTotalConsumido(); 
+
+	    // 🔹 No reemplazar, acumular
+	    cliente.setTotalConsumido(totalActual + valor);
+	}
 }
