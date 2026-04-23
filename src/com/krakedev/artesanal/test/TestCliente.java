@@ -1,5 +1,6 @@
 package com.krakedev.artesanal.test;
 
+import com.krakedev.artesanal.Cliente;
 import com.krakedev.artesanal.NegocioMejorado;
 
 public class TestCliente {
@@ -8,8 +9,8 @@ public class TestCliente {
 		// TODO Auto-generated method stub
 		NegocioMejorado nM = new NegocioMejorado();
 		
-		nM.registrarCLientes("Paul", "Mosquera");
-		System.out.println(nM);
+		Cliente cliente = nM.registrarCLientes("Paul", "123");
+		System.out.println(cliente);
 	}
 
 }
