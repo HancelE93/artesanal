@@ -136,6 +136,8 @@ public class NegocioMejorado {
 	    double valor = maquina.servirCerveza(cantidad);
 	    // 🔹 Invocar a servirCerveza de la máquina recuperada
 	    // 🔹 Guardar el retorno en una variable (valor)
+	    
+	    registrarConsumo(codigoCliente,valor);
 	}
 	
 	public void registrarConsumo (int codigoCliente, double valor) {
