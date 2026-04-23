@@ -122,7 +122,7 @@ public class NegocioMejorado {
 
 	}
 	
-	private void consumirCerveza (int codigoCliente, String codigoMaquina, double cantidad) {
+	public void consumirCerveza (int codigoCliente, String codigoMaquina, double cantidad) {
 		
 
 		// 🔹 Recibe: código cliente, código máquina, cantidad
