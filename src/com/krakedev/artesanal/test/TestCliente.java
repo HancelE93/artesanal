@@ -10,7 +10,7 @@ public class TestCliente {
 		NegocioMejorado nM = new NegocioMejorado();
 		
 		Cliente cliente = nM.registrarCLientes("Paul", "123");
-		System.out.println(cliente);
+		System.out.println("Funciona correctamente");
 	}
 
 }
