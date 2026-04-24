@@ -151,4 +151,21 @@ public class NegocioMejorado {
 	    // 🔹 No reemplazar, acumular
 	    cliente.setTotalConsumido(totalActual + valor);
 	}
+	
+	public double consultarValorVendido() {
+
+	    double total = 0;
+	    // 🔹 Variable acumuladora
+
+	    for (int i = 0; i < clientes.size(); i++) {
+
+	        Cliente cliente = clientes.get(i);
+
+	        total = total + cliente.getTotalConsumido();
+	        // 🔹 Sumar consumo de cada cliente
+	    }
+
+	    return total;
+	    // 🔹 Retornar suma total
+	}
 }

@@ -9,36 +9,31 @@ import com.krakedev.artesanal.Cliente;
 import com.krakedev.artesanal.NegocioMejorado;
 
 public class TestConsumoJUnitPrueba {
-	 @Test
-	    public void testConsumirCerveza() {
+	
+    @Test
+    public void testConsumirCerveza() {
 
-	        // 🔹 Crear negocio
-	        NegocioMejorado negocio = new NegocioMejorado();
 
-	        // 🔹 Agregar máquina
-	        negocio.agregarMaquina("Pilsener", "Rubia", 0.05);
+        NegocioMejorado negocio = new NegocioMejorado();
 
-	        // 🔹 Llenar máquina (IMPORTANTE)
-	        negocio.cargarMaquinas();
+     
+        negocio.agregarMaquina("Pilsener", "Rubia", 0.05);
 
-	        // 🔹 Obtener código de la máquina
-	        String codigoMaquina = negocio.getMaquinas().get(0).getCodigo();
+        negocio.cargarMaquinas();
 
-	        // 🔹 Registrar cliente
-	        Cliente cliente = negocio.registrarCLientes("Juan", "123");
-	        int codigoCliente = cliente.getCodigo();
+        String codigoMaquina = negocio.getMaquinas().get(0).getCodigo();
 
-	        // 🔹 Ejecutar consumo
-	        negocio.consumirCerveza(codigoCliente, codigoMaquina, 100);
+        Cliente cliente = negocio.registrarCLientes("Juan", "123");
+        int codigoCliente = cliente.getCodigo();
 
-	        // 🔹 Validar cliente actualizado
-	        assertTrue(cliente.getTotalConsumido() > 0);
+        negocio.consumirCerveza(codigoCliente, codigoMaquina, 100);
 
-	        // 🔹 Validar valores correctos
-	        double esperado = 100 * 0.05;
-	        assertEquals(esperado, cliente.getTotalConsumido(), 0.001);
+        assertTrue(cliente.getTotalConsumido() > 0);
 
-	        // 🔹 Validar máquina afectada
-	        assertTrue(negocio.getMaquinas().get(0).getCantidadActual() < 10000);
-	    }
+        double esperado = 100 * 0.05;
+        assertEquals(esperado, cliente.getTotalConsumido(), 0.001);
+
+        assertTrue(negocio.getMaquinas().get(0).getCantidadActual() < 10000);
+    }
+
 }
