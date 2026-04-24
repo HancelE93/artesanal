@@ -27,10 +27,8 @@ public class testConsultarValorVendidoUnit {
 	    negocio.consumirCerveza(c1.getCodigo(), codigoMaquina, 100); // 5
 	    negocio.consumirCerveza(c2.getCodigo(), codigoMaquina, 200); // 10
 
-	
 	    double esperado = 15;
 
-	
 	    assertEquals(esperado, negocio.consultarValorVendido(), 0.001);
 	}
 }
